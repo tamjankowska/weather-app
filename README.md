@@ -20,6 +20,14 @@ $ npm i -g nodemon (installs nodemon globally)
 update package.json to include a start script as below:
 $ "start": "nodemon index.js"
 
+# Install node fetch
+
+$ npm i node-fetch
+
+# Install dotenv
+
+$ npm i dotenv
+
 # Structuring the file system
 
 $ mkdir views, lib, public
