@@ -1,10 +1,9 @@
-<h1>Weather request</h1>
 
 <form action = "/weather" method = "POST">
     <label for = "city">city: </label>
     <input type = "text" name = "city">
-    <label for = "code">country code:  </label>
-    <input type = "text" name = "code">
+    <label for = "code">country:  </label>
+    <input placeholder = "i.e., gb, us" type = "text" name = "code">
     <input type = "submit" value = "submit">
 </form>
 
@@ -15,10 +14,13 @@
 {{/if}}
 
 {{#if listExists}}
-    <h2>Today's weather in {{name}}: </h2>
-    <ul>
-        {{#each data}}
-            <li>{{@key}} : {{this}}</li>
-        {{/each}}
-    </ul>
+    <div class = 'weatherContainer'>
+        <h2 class = 'name'>{{name}}</h2>
+
+        <h1 class = 'temp'>{{data.temp}}&deg;</h1>
+        <h2 class = 'description'>{{data.description}}</h2>
+        <h2 class = 'feelsLike'>Feels like... {{data.feels_like}}&deg;</h2>
+        {{!-- <h2 class = 'sunrise'>Sun will rise at {{data.sunrise}}</h2> --}}
+
+    </div>
 {{/if}}
